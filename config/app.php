@@ -156,6 +156,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * USER DEFINED Application Service Providers...
+         */
+        Collective\Html\HtmlServiceProvider::class,
+
     ],
 
     /*
@@ -202,6 +207,12 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
 
+
+        /*
+         * USER DEFINED
+         */
+        'Html' => Collective\Html\HtmlFacade::class,
+        'Form' => Collective\Html\FormFacade::class,
     ],
 
 ];
