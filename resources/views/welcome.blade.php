@@ -40,6 +40,9 @@
             <div class="content">
                 <div class="title">Hand Hygiene for Pros</div>
             </div>
+            <div>
+              @include('observe')
+            </div>
         </div>
     </body>
 </html>
