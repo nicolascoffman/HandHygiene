@@ -14,7 +14,7 @@ class ObservationController extends Controller
     //Shows form
     public function index(){
 
-      return view('observe', ['name' => "dick"]);
+      return view('observe', ['responses' => "frank"]);
 
     }
 
@@ -26,6 +26,12 @@ class ObservationController extends Controller
       $obj->Loc_ID =  $request->input('Loc_ID');
       $obj->Job_ID =  $request->input('Job_ID');
       $obj->save();
+      $questions = Observation::all();
+      return view('observe', ['responses' => $questions]);
+    }
+
+
+    public function json(){
       $questions = Observation::all();
       return response()->json($questions);
     }

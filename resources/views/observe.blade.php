@@ -21,12 +21,15 @@
                 ))
                 !!}</li>
 
-{!! Form::submit('Click Me!') !!}
+{!! Form::submit('Submit Form!') !!}
 
 
   {!! Form::close() !!}
 
-Hello {!! $name !!}
+<button ><a href="./observe/json">View as JSON</a></button><br />
+
+
+{!! $responses !!}
 
 
 </div>
