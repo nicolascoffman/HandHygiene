@@ -1,4 +1,41 @@
-{!! Form::open(array('url' => '/observe')) !!}
-    {!! Form::select('thing', array('L' => 'Large', 'S' => 'Small')) !!}
+<div>
+  {!! Form::open(array('url' => '/observe')) !!}
 
-{!! Form::close() !!}
+      <li>{!! Form::text('username', $placeholder = 'username') !!}</li>
+      <li>{!! Form::select('Loc_ID', array(
+                '0' => 'SICU',
+                '1' => 'PICU',
+                '2' => 'Other'
+                ))
+                !!}</li>
+      <li>{!! Form::select('Job_ID', array(
+                '0' => 'SICU',
+                '1' => 'PICU',
+                '2' => 'Other'
+                ))
+                !!}</li>
+      <li>{!! Form::select('Moment_ID', array(
+                '0' => 'SICU',
+                '1' => 'PICU',
+                '2' => 'Other'
+                ))
+                !!}</li>
+
+{!! Form::submit('Click Me!') !!}
+
+
+  {!! Form::close() !!}
+
+Hello {!! $name !!}
+
+
+</div>
+<!--       $table->integer('Loc_ID');
+      $table->integer('Job_ID');
+      $table->integer('Moment_ID');
+      $table->integer('Result_ID');
+      $table->integer('Reason_ID');
+      $table->boolean('Gloves');
+      $table->binary('Entry Exit');
+
+    -->

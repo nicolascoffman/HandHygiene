@@ -15,9 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('observe', function () {
-    return view('observe');
-});
+Route::get('observe', 'ObservationController@index')->name('observe');
+
+Route::post('observe', 'ObservationController@gotWhatever')->name('submitted');
 
 /*
 |--------------------------------------------------------------------------
