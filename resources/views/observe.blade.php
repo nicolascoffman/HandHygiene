@@ -1,3 +1,6 @@
+
+@parent
+
 <div>
   {!! Form::open(array('url' => '/observe')) !!}
 
