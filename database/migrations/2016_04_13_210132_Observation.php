@@ -33,6 +33,6 @@ class Observation extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('observations');
     }
 }

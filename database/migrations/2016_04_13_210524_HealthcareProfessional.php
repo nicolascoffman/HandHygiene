@@ -15,7 +15,7 @@ class HealthcareProfessional extends Migration
         //
         Schema::create('HealthcareProfessionals', function (Blueprint $table) {
                  $table->increments('Job_ID');
-                 $table->string('PositionName')
+                 $table->string('PositionName');
                  });
     }
 
@@ -26,6 +26,6 @@ class HealthcareProfessional extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('HealthcareProfessionals');
     }
 }
