@@ -1,6 +1,6 @@
+@extends('main')
 
-@parent
-
+@section('content')
 <div>
   {!! Form::open(array('url' => '/observe')) !!}
 
@@ -36,6 +36,7 @@
 
 
 </div>
+@stop
 <!--       $table->integer('Loc_ID');
       $table->integer('Job_ID');
       $table->integer('Moment_ID');

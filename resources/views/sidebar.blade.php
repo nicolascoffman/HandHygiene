@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html>
 
 <ul>
   <li>Dashboard</li>
@@ -7,5 +5,3 @@
   <li>Analyze</li>
   <li>Edit</li>
 </ul>
-
-</html>
