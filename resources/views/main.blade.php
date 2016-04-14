@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
+
+{{!! HTML::style('css/style.css') !!}}
+
   <div class="contianer">
     <div class="sidebar">
       @include('sidebar')
@@ -12,5 +11,5 @@
       @yield('content')
     </div>
   </div>
-</body>
+
 </html>
