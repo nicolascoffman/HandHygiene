@@ -21,6 +21,8 @@ Route::post('observe', 'ObservationController@gotWhatever')->name('submitted');
 
 Route::get('observe/json', 'ObservationController@json')->name('observejson');
 
+Route::get('edit', 'Edit@index')->name('edit');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
