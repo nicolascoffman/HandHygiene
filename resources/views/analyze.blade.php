@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html>
+@extends('main')
 
+@section('content')
 
+Analyzie THIS!
 
-
-</html>
+@stop

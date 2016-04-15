@@ -13,7 +13,7 @@ class ObservationController extends Controller
     //Shows form
     public function index(){
 
-      return view('observe', ['responses' => "frank"]);
+      return view('observe', ['responses' => ""]);
 
     }
 

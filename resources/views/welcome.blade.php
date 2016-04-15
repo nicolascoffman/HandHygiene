@@ -38,7 +38,8 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Hand Hygiene for Pros</div>
+                <div class="title">Hand Hygiene Monitoring for Jackson Memorial</div>
+                <button ><a href="./observe/">Enter</a></button><br />
             </div>
 
         </div>

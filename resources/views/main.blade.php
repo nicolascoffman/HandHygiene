@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
 
-{{!! HTML::style('css/style.css') !!}}
+{!! Html::style('css/style.css') !!}
+<div class="outer">
+  <div class="middle">
 
-  <div class="contianer">
-    <div class="sidebar">
-      @include('sidebar')
-    </div>
-    <div class="content">
-      @yield('content')
-    </div>
+      <div class="container">
+        <div class="sidebar">
+          @include('sidebar')
+        </div>
+        <div class="content">
+          @yield('content')
+        </div>
+      </div>
   </div>
+</div>
 
 </html>
