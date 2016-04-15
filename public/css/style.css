@@ -95,14 +95,14 @@ body{
     background-color:     #6EAFDD;
 }
 #observe {
-  background-color:     #3438D0;
+  background-color:     #1419C6;
 }
 #observe:hover {
   background-color:     #7A7DE2;
 }
 
 #analyze {
-  background-color:     #FFC61F;
+  background-color:     #FFBE00;
 }
 #analyze:hover {
   background-color:     #FFDC76
@@ -110,7 +110,7 @@ body{
 }
 
 #edit {
-  background-color:     #FF9D1F;
+  background-color:     #FF9000;
 }
 #edit:hover {
   background-color:     #FFC376;
