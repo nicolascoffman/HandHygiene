@@ -5,9 +5,8 @@
 <!-- edit content -->
 
 
-
 @foreach($tablelist as $name)
-    <h5>{!! $name !!}</h5>
+   <option value="5" >    {!!  $name !!} </option>
 
 @endforeach
 
