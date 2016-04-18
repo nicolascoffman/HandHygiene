@@ -15,13 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('observe', 'ObservationController@index')->name('observe');
+Route::get('observe', 'Observation@index')->name('observe');
 
-Route::post('observe', 'ObservationController@gotWhatever')->name('submitted');
-
-Route::get('observe/json', 'ObservationController@json')->name('observejson');
+Route::post('observe', 'Observation@gotWhatever')->name('submitted');
 
 Route::get('edit', 'Edit@index')->name('edit');
+
+Route::post('edit', 'Edit@display')->name('datatype');
 
 /*
 |--------------------------------------------------------------------------

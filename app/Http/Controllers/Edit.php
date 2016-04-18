@@ -6,38 +6,23 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use DB;
 
-$tables = array(
-  'Users' => 'users',
-  'Oberservations' => 'observations',
-  'Healthcare Professional Type' => 'HealthcareProfessionals',
-  'Locations' => 'locations',
-  'Moments' => 'moments',
-  'Results' => 'results',
-  'Reasons' => 'reasons',
-  );
 
 class Edit extends Controller
 {
+
   //Shows form
   public function index(){
-
-    $tables = array(
-      'Users' => 'users',
-      'Oberservations' => 'observations',
-      'Healthcare Professional Type' => 'HealthcareProfessionals',
-      'Locations' => 'locations',
-      'Moments' => 'moments',
-      'Results' => 'results',
-      'Reasons' => 'reasons',
-      );
-  	return view('edit', ["tablelist" => array_keys($tables)]);
+    $tables = Controller::GetTables();
+    $current = 0;
+    $data = 0;
+  	return view('edit', compact('tables', 'current', 'data'));
       }
 
-
-
-
-
-
+  public function display(Request $request){
+      $tables = Controller::GetTables();
+    $current = $request->input('current');
+      $data = 0;
+	return view('edit', compact('tables', 'current', 'data'));
+  }
 }
