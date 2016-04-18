@@ -24,11 +24,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function observation() { 
-      return $this->hasMany('App\Observation');
+    public function observation(){ return $this->hasMany('App\Observation');
     }
-    public function moment() { 
-      return $this->hasMany('App\Moment');
+
+    public function moment(){ return $this->hasMany('App\Moment');
     }
     public function healthcareprofessional() { 
       return $this->hasMany('App\HealthcareProfessional');
@@ -41,5 +40,5 @@ class User extends Authenticatable
     }
     public function reason() { 
       return $this->hasMany('App\Reason');
-    }    
+    }
 }

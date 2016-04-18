@@ -14,7 +14,7 @@
 </div>
 {!! Form::close() !!}
 
-
+{!! $data !!}
 
 @stop
 
