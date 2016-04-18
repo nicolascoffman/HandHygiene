@@ -24,21 +24,17 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function observation(){ return $this->hasMany('App\Observation');
+    public function observation(){return $this->hasMany('App\Observation');
+    }
+    public function healthcareprofessional(){return $this->hasMany('App\HealthcareProfessional');
+    }
+    public function location(){return $this->hasMany('App\Location');
+    }
+    public function moment(){return $this->hasMany('App\Moment');
+    }
+    public function result(){return $this->hasMany('App\Result');
+    }
+    public function reason(){return $this->hasMany('App\Reason');
     }
 
-    public function moment(){ return $this->hasMany('App\Moment');
-    }
-    public function healthcareprofessional() { 
-      return $this->hasMany('App\HealthcareProfessional');
-    }
-    public function location() { 
-      return $this->hasMany('App\Location');
-    }
-    public function result() { 
-      return $this->hasMany('App\Result');
-    }
-    public function reason() { 
-      return $this->hasMany('App\Reason');
-    }
 }

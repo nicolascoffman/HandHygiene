@@ -12,7 +12,7 @@ use App\HealthcareProfessional;
 use App\Location;
 use App\Moment;
 use App\Reason;
-//use App\User;
+use App\User;
 use App\Result;
 
 
@@ -33,7 +33,7 @@ class Edit extends Controller
     $current = $request->input('current');
 
     $models = array(
-  //  'users' => User::all(),
+    'users' => User::all(),
     'observations' => Observation::all(),
     'HealthcareProfessionals' => HealthcareProfessional::all(),
     'locations' => Location::all(),
