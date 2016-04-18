@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class HealthcareProfessional extends Model
 {
+protected $table = "healthcareprofessionals";
 
   public function observation(){return $this->hasMany('App\Observation');
   }
