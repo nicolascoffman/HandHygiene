@@ -160,6 +160,7 @@ return [
          * USER DEFINED Application Service Providers...
          */
         Collective\Html\HtmlServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class,
 
     ],
 

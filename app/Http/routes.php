@@ -19,9 +19,18 @@ Route::get('observe', 'Observation@index')->name('observe');
 
 Route::post('observe', 'Observation@gotWhatever')->name('submitted');
 
-Route::get('edit', 'Edit@index')->name('edit');
+Route::post('edit', 'Edit@postCurrent')->name('edit.current');
 
-Route::post('edit', 'Edit@display')->name('datatype');
+Route::controller('edit', 'Edit', [
+    'anyData'  => 'edit.data',
+    'getIndex' => 'edit',
+]);
+
+Route::controller('dataz', 'DatatablesController', [
+    'anyData'  => 'dataz.data',
+    'getIndex' => 'dataz'
+]);
+
 
 /*
 |--------------------------------------------------------------------------

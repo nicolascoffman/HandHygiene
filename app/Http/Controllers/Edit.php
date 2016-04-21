@@ -15,37 +15,79 @@ use App\Reason;
 use App\User;
 use App\Result;
 
+use Yajra\Datatables\Datatables;
+
+
 
 class Edit extends Controller
 {
 
+
   //Shows form
-  public function index(){
+  public function getIndex(){
     $tables = Controller::GetTables();
     $current = 0;
-    $data = 0;
-  	return view('edit', compact('tables', 'current', 'data'));
+
+  	return view('editMain', compact('tables', 'current'));
       }
 
-  public function display(Request $request){
-      $tables = Controller::GetTables();
+
+  public function postCurrent(Request $request){
+
+
+    $tables = Controller::GetTables();
 
     $current = $request->input('current');
 
-    $models = array(
-    'users' => User::all(),
-    'observations' => Observation::all(),
-    'HealthcareProfessionals' => HealthcareProfessional::all(),
-    'locations' => Location::all(),
-    'moments' => Moment::all(),
-    'results' => Result::all(),
-    'reasons' => Reason::all(),
+
+    $views = array(
+    'users' => 'editUser',
+    'observations' => 'editObservation',
+    'HealthcareProfessionals' => 'HealthcareProfessional',
+    'locations' => 'editLocation',
+    'moments' => 'editMoment',
+    'results' => 'editResult',
+    'reasons' => 'editReason',
     );
 
-    $data = $models[$current];
+    $view = $views[$current];
+
+
+return view($view, compact('tables', 'current'));
 
 
 
-return view('edit', compact('tables', 'current', 'data'));
   }
+
+  public function anyData(){
+
+    $current = 'users';
+
+      switch ($current) {
+    case "users":
+        return Datatables::of(User::all())->make(true);;
+        break;
+    case "observations":
+        return Datatables::of(Observation::all())->make(true);;
+        break;
+    case "HealthcareProfessionals":
+        return Datatables::of(HealthcareProfessional::all())->make(true);;
+        break;
+    case "locations":
+        return Datatables::of(Location::all())->make(true);;
+        break;
+    case "moments":
+        return Datatables::of(Moment::all())->make(true);;
+        break;
+    case "results":
+        return Datatables::of(Result::all())->make(true);;
+        break;
+    case "reasons":
+        return Datatables::of(Reason::all())->make(true);;
+        break;
+          }
+
+
+    }
+
 }
