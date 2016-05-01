@@ -11,14 +11,14 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Controller extends BaseController
 {
-  
+
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function GetTables(){
       $tables = array(
         'users' => 'Users',
         'observations' => 'Oberservations',
-        'HealthcareProfessionals' => 'Healthcare Professional Type',
+        'HealthcareProfessionals' => 'Healthcare Professionals',
         'locations' => 'Locations',
         'moments' => 'Moments',
         'results' => 'Results',

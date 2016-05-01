@@ -43,7 +43,7 @@ class Edit extends Controller
     $views = array(
     'users' => 'editUser',
     'observations' => 'editObservation',
-    'HealthcareProfessionals' => 'HealthcareProfessional',
+    'HealthcareProfessionals' => 'editHealthcareProfessional',
     'locations' => 'editLocation',
     'moments' => 'editMoment',
     'results' => 'editResult',
