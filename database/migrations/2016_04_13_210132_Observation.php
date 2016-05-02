@@ -15,7 +15,7 @@ class Observation extends Migration
       Schema::create('observations', function (Blueprint $table) {
                $table->increments('ID');
                $table->timestamps();
-               $table->integer('IP_ID');
+               $table->integer('user_ID');
                $table->integer('Loc_ID');
                $table->integer('Job_ID');
                $table->integer('Moment_ID');
