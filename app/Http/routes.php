@@ -16,20 +16,38 @@ Route::get('/', function () {
 });
 
 Route::get('observe', 'Observation@index')->name('observe');
-
 Route::post('observe', 'Observation@gotWhatever')->name('submitted');
 
+Route::get('edit', 'Edit@getIndex')->name('edit');
 Route::post('edit', 'Edit@postCurrent')->name('edit.current');
 
-Route::controller('edit', 'Edit', [
-    'anyData'  => 'edit.data',
-    'getIndex' => 'edit',
-]);
+
+Route::get('userdata', 'userData@datatable')->name('data.user');
+Route::get('observationdata', 'observationData@datatable')->name('data.observation');
+Route::get('hpdata', 'hpData@datatable')->name('data.healthcareprofessional');
+Route::get('locationdata', 'locationData@datatable')->name('data.location');
+Route::get('momentdata', 'momentData@datatable')->name('data.moment');
+Route::get('resultdata', 'resultData@datatable')->name('data.result');
+Route::get('reasondata', 'reasonData@datatable')->name('data.reason');
+
+
+//Route::controller('data', 'Data', [
+//  'userData' => 'data.user',
+//  'observationData' => 'name2',
+//  'userHealthcareProfessional' => 'userHealthcareProfessional',
+//  'userLocation' => 'userLocation',
+//  'userMoment' => 'userMoment',
+//  'userResult' => 'userResult',
+//  'userReason' => 'userReason',
+//]);
+
+
 
 Route::controller('dataz', 'DatatablesController', [
     'anyData'  => 'dataz.data',
     'getIndex' => 'dataz'
 ]);
+
 
 
 /*

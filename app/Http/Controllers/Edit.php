@@ -53,41 +53,7 @@ class Edit extends Controller
     $view = $views[$current];
 
 
-return view($view, compact('tables', 'current'));
-
-
-
+  return view($view, compact('tables', 'current'));
   }
-
-  public function anyData(){
-
-    $current = 'users';
-
-      switch ($current) {
-    case "users":
-        return Datatables::of(User::all())->make(true);;
-        break;
-    case "observations":
-        return Datatables::of(Observation::all())->make(true);;
-        break;
-    case "HealthcareProfessionals":
-        return Datatables::of(HealthcareProfessional::all())->make(true);;
-        break;
-    case "locations":
-        return Datatables::of(Location::all())->make(true);;
-        break;
-    case "moments":
-        return Datatables::of(Moment::all())->make(true);;
-        break;
-    case "results":
-        return Datatables::of(Result::all())->make(true);;
-        break;
-    case "reasons":
-        return Datatables::of(Reason::all())->make(true);;
-        break;
-          }
-
-
-    }
 
 }
