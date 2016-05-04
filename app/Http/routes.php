@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 
 
@@ -33,6 +31,10 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['web']], function () {
 
+  Route::get('/', function () {
+      return view('welcome');
+  });
+
    Route::auth();
 
 
@@ -41,12 +43,18 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('analyze', 'Analyze@index')->name('analyze');
 
 
+
     Route::get('observe', 'Observation@index')->name('observe');
     Route::post('observe', 'Observation@gotWhatever')->name('submitted');
 
+  Route::get('nice', 'Observation@nice')->name('nice');
+
     Route::get('edit', 'Edit@getIndex')->name('edit');
     Route::post('edit', 'Edit@postCurrent')->name('edit.current');
-
+    Route::get('editor/{table}/{id}', 'Edit@editMaker')->name('editor');
+    Route::post('update', 'Edit@updater')->name('updater');
+    Route::post('delete', 'Edit@delete')->name('delete');
+    //Route::get('editor/{table}', ['as' => 'scopes.index', 'uses' => 'ScopeController@index']);
 
     Route::get('userdata', 'userData@datatable')->name('data.user');
     Route::get('observationdata', 'observationData@datatable')->name('data.observation');

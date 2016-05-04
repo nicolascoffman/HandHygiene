@@ -3,7 +3,11 @@
 @section('content')
 <div>
 
-"DASHBOARD"
+<div id="pop_div">
+
+@areachart('Population', 'pop_div')
+
+</div>
 </div>
 @stop
 <!--       $table->integer('Loc_ID');

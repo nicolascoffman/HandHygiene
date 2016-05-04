@@ -22,6 +22,10 @@ use Yajra\Datatables\Datatables;
 class locationData extends Controller
 {
 
+
+
+
+
   public function datatable(){
 
 

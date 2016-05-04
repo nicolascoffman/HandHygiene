@@ -7,21 +7,22 @@ Storing Observation as {!! Auth::user()->name !!}.
 <div>
   {!! Form::open(array('url' => '/observe')) !!}
 
-    {{ Form::hidden('id', $id) }}
+    {{ Form::hidden('user_id', $id) }}
+    <br />
 
-    {{ Form::select('Loc_ID', $loc) }}
-    {{ Form::select('Job_ID', $hp) }}
-    {{ Form::select('Moment_ID', $mom) }}
+    {{ Form::select('Loc_ID', $loc) }}<br />
+    {{ Form::select('Job_ID', $hp) }}<br />
+    {{ Form::select('Moment_ID', $mom) }}<br>
 
     {!! Form::select('Entry_Exit', array(
                 '0' => 'Entry',
                 '1' => 'Exit',
                 ))
-                !!}
+                !!}<br />
 
 
-    {{ Form::select('Result_ID', $result) }}
-    {{ Form::select('Reason_ID', $reas) }}
+    {{ Form::select('Result_ID', $result) }}<br />
+    {{ Form::select('Reason_ID', $reas) }}<br />
 
 
 
@@ -29,7 +30,7 @@ Storing Observation as {!! Auth::user()->name !!}.
                 'True' => 'Gloves Yes',
                 'False' => 'Gloves No',
                 ))
-                !!}
+                !!}<br />
 
   {!! Form::submit('Submit Form!') !!}
 
@@ -39,12 +40,3 @@ Storing Observation as {!! Auth::user()->name !!}.
 
 </div>
 @stop
-<!--  $table->integer('Loc_ID');
-      $table->integer('Job_ID');
-      $table->integer('Moment_ID');
-      $table->integer('Result_ID');
-      $table->integer('Reason_ID');
-      $table->boolean('Gloves');
-      $table->binary('Entry Exit');
-
-    -->

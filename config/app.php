@@ -161,6 +161,8 @@ return [
          */
         Collective\Html\HtmlServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
+        Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
+
 
     ],
 
@@ -214,6 +216,8 @@ return [
          */
         'Html' => Collective\Html\HtmlFacade::class,
         'Form' => Collective\Html\FormFacade::class,
+        'Lava' => Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
+
     ],
 
 ];

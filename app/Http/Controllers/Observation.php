@@ -40,7 +40,7 @@ class Observation extends Controller
 
     public function gotWhatever(Request $request){
       $obj = new Observation;
-      $obj->id  =  $request->input('id');
+      $obj->user_id  =  $request->input('user_id');
       $obj->Loc_ID =  $request->input('Loc_ID');
       $obj->Job_ID =  $request->input('Job_ID');
       $obj->Moment_ID  =  $request->input('Moment_ID');
@@ -63,6 +63,22 @@ class Observation extends Controller
 
 
 
+    }
+
+    public function nice(){
+
+      $id = Auth::id();
+
+      $loc = Location::pluck('LocationName', 'Location_ID');
+      $hp = HealthcareProfessional::pluck('PositionName', 'Job_ID');
+      $mom = Moment::pluck('MomentName', 'Moment_ID');
+      $reas = Reason::pluck('ReasonName', 'Reason_ID');
+      $result = Result::pluck('ResultName', 'Result_ID');
+
+
+      return view('observenice',  compact('loc', 'hp', 'id', 'mom', 'reas', 'result'));
+
+      
     }
 /*
           $table->integer('Loc_ID');

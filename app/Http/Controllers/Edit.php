@@ -14,6 +14,8 @@ use App\Moment;
 use App\Reason;
 use App\User;
 use App\Result;
+use Schema;
+use DB;
 
 use Yajra\Datatables\Datatables;
 
@@ -30,6 +32,29 @@ class Edit extends Controller
 
   	return view('editMain', compact('tables', 'current'));
       }
+
+
+//Edit data
+
+public function editMaker($table, $id){
+
+//  $item = DB::table($table)->where('ID', $id);
+//  $item = DB::getSchemaBuilder()->getColumnListing($table);
+
+  return view ('editor', compact('id', 'table'));
+
+}
+
+  public function updater(Request $request){
+return view ('editor', compact('item', $table));
+  }
+
+  public function delete(Request $request){
+return view ('editor', compact('item', $table));
+  }
+
+
+
 
 
   public function postCurrent(Request $request){

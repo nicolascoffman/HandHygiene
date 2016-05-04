@@ -46,8 +46,8 @@
                     <a href="{{ url('/login') }}"  class="btn btn-primary">Login</a>
                     <a href="{{ url('/register') }}"  class="btn btn-primary">Register</a>
                 @else
-                    Welcome back, {!! Auth::user()->name !!}
-                    <a href="{{ url('/observe') }}"  class="btn btn-primary">Welcome back, {!! Auth::user()->name !!} </a>
+                    Welcome back, {!! Auth::user()->name !!}!<br />
+                    <a href="{{ url('/dashboard') }}"  class="btn btn-primary">Enter</a>
                 @endif
             </div>
 
