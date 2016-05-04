@@ -22,7 +22,7 @@ class Observation extends Migration
                $table->integer('Result_ID');
                $table->integer('Reason_ID');
                $table->boolean('Gloves');
-               $table->binary('Entry Exit');
+               $table->binary('Entry_Exit');
                });
     }
 

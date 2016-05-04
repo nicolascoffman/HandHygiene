@@ -23,7 +23,7 @@ class Observation extends Controller
     //Shows form
     public function index(){
 
-      $id = Auth::getName();
+      $id = Auth::id();
 
       $loc = Location::pluck('LocationName', 'Location_ID');
       $hp = HealthcareProfessional::pluck('PositionName', 'Job_ID');
@@ -32,7 +32,7 @@ class Observation extends Controller
       $result = Result::pluck('ResultName', 'Result_ID');
 
 
-      return view('observe',  compact('loc', 'id', 'mom', 'reas', 'result'));
+      return view('observe',  compact('loc', 'hp', 'id', 'mom', 'reas', 'result'));
 
     }
 
@@ -40,11 +40,11 @@ class Observation extends Controller
 
     public function gotWhatever(Request $request){
       $obj = new Observation;
-      $obj->IP_ID  =  $request->input('IP_ID');
+      $obj->id  =  $request->input('id');
       $obj->Loc_ID =  $request->input('Loc_ID');
       $obj->Job_ID =  $request->input('Job_ID');
       $obj->Moment_ID  =  $request->input('Moment_ID');
-      $obj->'Entry Exit'  =  $request->input('IP_ID');
+      $obj->Entry_Exit  =  $request->input('Entry_Exit');
       $obj->Result_ID =  $request->input('Result_ID');
       $obj->Reason_ID  =  $request->input('Reason_ID');
       $obj->Gloves =  $request->input('Gloves');
@@ -59,7 +59,7 @@ class Observation extends Controller
       $result = Result::pluck('ResultName', 'Result_ID');
 
 
-      return view('observe',  compact('loc', 'id', 'mom', 'reas', 'result'));
+      return view('observe',  compact('loc', 'hp', 'id', 'mom', 'reas', 'result'));
 
 
 

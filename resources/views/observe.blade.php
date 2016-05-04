@@ -2,21 +2,18 @@
 
 @section('content')
 
-{!! Auth::user()->name !!}
-
-
-{!! $loc !!}
- {{$id}}
+Storing Observation as {!! Auth::user()->name !!}.
 
 <div>
   {!! Form::open(array('url' => '/observe')) !!}
 
-    {{ Form:hidden('IP_ID', {!! Auth::user()->id !!}) }}
+    {{ Form::hidden('id', $id) }}
+
     {{ Form::select('Loc_ID', $loc) }}
     {{ Form::select('Job_ID', $hp) }}
     {{ Form::select('Moment_ID', $mom) }}
 
-    {!! Form::select('Entry Exit', array(
+    {!! Form::select('Entry_Exit', array(
                 '0' => 'Entry',
                 '1' => 'Exit',
                 ))
@@ -29,8 +26,8 @@
 
 
     {!! Form::select('Gloves', array(
-                '0' => 'Yes',
-                '1' => 'No',
+                'True' => 'Gloves Yes',
+                'False' => 'Gloves No',
                 ))
                 !!}
 
