@@ -1,43 +1,48 @@
 @extends('main')
 
 @section('content')
+
+{!! Auth::user()->name !!}
+
+
+{!! $loc !!}
+ {{$id}}
+
 <div>
   {!! Form::open(array('url' => '/observe')) !!}
 
-      <li>{!! Form::text('username', $placeholder = 'username') !!}</li>
-      <li>{!! Form::select('Loc_ID', array(
-                '0' => 'SICU',
-                '1' => 'PICU',
-                '2' => 'Other'
-                ))
-                !!}</li>
-      <li>{!! Form::select('Job_ID', array(
-                '0' => 'SICU',
-                '1' => 'PICU',
-                '2' => 'Other'
-                ))
-                !!}</li>
-      <li>{!! Form::select('Moment_ID', array(
-                '0' => 'SICU',
-                '1' => 'PICU',
-                '2' => 'Other'
-                ))
-                !!}</li>
+    {{ Form:hidden('IP_ID', {!! Auth::user()->id !!}) }}
+    {{ Form::select('Loc_ID', $loc) }}
+    {{ Form::select('Job_ID', $hp) }}
+    {{ Form::select('Moment_ID', $mom) }}
 
-{!! Form::submit('Submit Form!') !!}
+    {!! Form::select('Entry Exit', array(
+                '0' => 'Entry',
+                '1' => 'Exit',
+                ))
+                !!}
+
+
+    {{ Form::select('Result_ID', $result) }}
+    {{ Form::select('Reason_ID', $reas) }}
+
+
+
+    {!! Form::select('Gloves', array(
+                '0' => 'Yes',
+                '1' => 'No',
+                ))
+                !!}
+
+  {!! Form::submit('Submit Form!') !!}
 
 
   {!! Form::close() !!}
 
-<button ><a href="./observe/json">View as JSON</a></button><br />
-
-
-{!! $responses !!}
-
 
 </div>
 @stop
-<!--       $table->integer('Loc_ID');
+<!--  $table->integer('Loc_ID');
       $table->integer('Job_ID');
       $table->integer('Moment_ID');
       $table->integer('Result_ID');

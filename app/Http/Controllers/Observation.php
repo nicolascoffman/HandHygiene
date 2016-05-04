@@ -7,14 +7,32 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+
 use App\Observation;
+use App\HealthcareProfessional;
+use App\Location;
+use App\Moment;
+use App\Reason;
+use App\User;
+use App\Result;
+
+use Auth;
 
 class Observation extends Controller
 {
     //Shows form
     public function index(){
 
-      return view('observe', ['responses' => ""]);
+      $id = Auth::getName();
+
+      $loc = Location::pluck('LocationName', 'Location_ID');
+      $hp = HealthcareProfessional::pluck('PositionName', 'Job_ID');
+      $mom = Moment::pluck('MomentName', 'Moment_ID');
+      $reas = Reason::pluck('ReasonName', 'Reason_ID');
+      $result = Result::pluck('ResultName', 'Result_ID');
+
+
+      return view('observe',  compact('loc', 'id', 'mom', 'reas', 'result'));
 
     }
 
@@ -22,14 +40,39 @@ class Observation extends Controller
 
     public function gotWhatever(Request $request){
       $obj = new Observation;
-      $obj->Moment_ID  =  $request->input('Moment_ID');
+      $obj->IP_ID  =  $request->input('IP_ID');
       $obj->Loc_ID =  $request->input('Loc_ID');
       $obj->Job_ID =  $request->input('Job_ID');
+      $obj->Moment_ID  =  $request->input('Moment_ID');
+      $obj->'Entry Exit'  =  $request->input('IP_ID');
+      $obj->Result_ID =  $request->input('Result_ID');
+      $obj->Reason_ID  =  $request->input('Reason_ID');
+      $obj->Gloves =  $request->input('Gloves');
       $obj->save();
-      $questions = Observation::all();
-      return view('observe', ['responses' => $questions]);
-    }
 
+      $id = Auth::getName();
+
+      $loc = Location::pluck('LocationName', 'Location_ID');
+      $hp = HealthcareProfessional::pluck('PositionName', 'Job_ID');
+      $mom = Moment::pluck('MomentName', 'Moment_ID');
+      $reas = Reason::pluck('ReasonName', 'Reason_ID');
+      $result = Result::pluck('ResultName', 'Result_ID');
+
+
+      return view('observe',  compact('loc', 'id', 'mom', 'reas', 'result'));
+
+
+
+    }
+/*
+          $table->integer('Loc_ID');
+          $table->integer('Job_ID');
+          $table->integer('Moment_ID');
+          $table->integer('Result_ID');
+          $table->integer('Reason_ID');
+          $table->boolean('Gloves');
+          $table->binary('Entry Exit');
+*/
 
 
 }
