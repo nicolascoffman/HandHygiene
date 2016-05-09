@@ -44,10 +44,10 @@ Route::group(['middleware' => ['web']], function () {
 
 
 
-    Route::get('observe', 'Observation@index')->name('observe');
-    Route::post('observe', 'Observation@gotWhatever')->name('submitted');
+    Route::get('observe', 'Observe@index')->name('observe');
+    Route::post('observe', 'Observe@gotWhatever')->name('submitted');
 
-  Route::get('nice', 'Observation@nice')->name('nice');
+  Route::get('nice', 'Observe@nice')->name('nice');
 
     Route::get('edit', 'Edit@getIndex')->name('edit');
     Route::post('edit', 'Edit@postCurrent')->name('edit.current');
